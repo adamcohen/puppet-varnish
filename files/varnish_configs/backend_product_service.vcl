@@ -9,7 +9,7 @@ backend product_service_localhost {
     .threshold = 2;
     .request = 
       "GET /admin/about HTTP/1.1"
-      "Host: product-service.systest.dbg.westfield.com"
+      "Host: product-service.development.dbg.westfield.com"
       "Connection: close";
   }
 }

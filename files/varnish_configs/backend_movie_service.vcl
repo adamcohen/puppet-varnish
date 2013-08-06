@@ -9,7 +9,7 @@ backend movie_service_localhost {
     .threshold = 2;
     .request = 
       "GET /status.json HTTP/1.1"
-      "Host: movie-service.systest.dbg.westfield.com"
+      "Host: movie-service.development.dbg.westfield.com"
       "Connection: close";
   }
 }

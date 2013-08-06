@@ -9,7 +9,7 @@ backend store_service_localhost {
     .threshold = 2;
     .request = 
       "GET /status.json HTTP/1.1"
-      "Host: store-service.systest.dbg.westfield.com"
+      "Host: store-service.development.dbg.westfield.com"
       "Connection: close";
   }
 }

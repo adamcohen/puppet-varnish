@@ -9,7 +9,7 @@ backend file_service_localhost {
     .threshold = 2;
     .request = 
       "GET /status.json HTTP/1.1"
-      "Host: file-service.systest.dbg.westfield.com"
+      "Host: file-service.development.dbg.westfield.com"
       "Connection: close";
   }
 }

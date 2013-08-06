@@ -9,7 +9,7 @@ backend deal_service_localhost {
     .threshold = 2;
     .request = 
       "GET /status.json HTTP/1.1"
-      "Host: deal-service.systest.dbg.westfield.com"
+      "Host: deal-service.development.dbg.westfield.com"
       "Connection: close";
   }
 }

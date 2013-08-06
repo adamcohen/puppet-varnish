@@ -9,7 +9,7 @@ backend search_service_localhost {
     .threshold = 2;
     .request = 
       "GET /robots.txt HTTP/1.1"
-      "Host: search-service.systest.dbg.westfield.com"
+      "Host: search-service.development.dbg.westfield.com"
       "Connection: close";
   }
 }

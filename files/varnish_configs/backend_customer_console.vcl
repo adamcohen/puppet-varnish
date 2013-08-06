@@ -9,7 +9,7 @@ backend customer_console_localhost {
     .threshold = 2;
     .request = 
       "GET /status.json HTTP/1.1"
-      "Host: customer-console.systest.dbg.westfield.com"
+      "Host: customer-console.development.dbg.westfield.com"
       "Connection: close";
   }
 }
