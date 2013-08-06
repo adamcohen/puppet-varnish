@@ -9,7 +9,7 @@ backend centre_service_localhost {
     .threshold = 2;
     .request = 
       "GET /status.json HTTP/1.1"
-      "Host: centre-service.production.dbg.westfield.com"
+      "Host: centre-service.systest.dbg.westfield.com"
       "Connection: close";
   }
 }

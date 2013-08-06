@@ -1,4 +1,4 @@
-backend event_service_localhost {
+backend search_service_localhost {
   .host = "localhost";
   .port = "8080";
   .max_connections = 16;
@@ -8,13 +8,13 @@ backend event_service_localhost {
     .window = 5;
     .threshold = 2;
     .request = 
-      "GET /status.json HTTP/1.1"
-      "Host: event-service.systest.dbg.westfield.com"
+      "GET /robots.txt HTTP/1.1"
+      "Host: search-service.systest.dbg.westfield.com"
       "Connection: close";
   }
 }
 
-director event_service random {
-  { .backend = event_service_localhost; .weight = 1; }
+director search_service random {
+  { .backend = search_service_localhost; .weight = 1; }
 }
 

@@ -1,26 +1,57 @@
+# $Id: canonical_westfield_com_uk.vcl 861 2010-03-01 02:29:21Z thiago $
+
+# Systest 1
+
 if (
-	req.http.Host ~ "^(www\.)?westfield\.com$" ||
-	req.http.Host ~ "^(www\.)?westfield\.com\.au$" ||
-	req.http.Host ~ "^(www\.)?westfields\.com\.au$" ||
-	req.http.Host ~ "^(www\.)?westfield\.co\.nz$" ||
-	req.http.Host ~ "^(www\.)?westfields\.co\.uk$" ||
-        req.http.Host ~ "^wwwnz\.uat\.westfield\.com$" ||
-        req.http.Host ~ "^wwwau\.uat\.westfield\.com$" ||
-        req.http.Host ~ "^wwwus\.uat\.westfield\.com$" ||
-	req.http.Host ~ "^wwwau\.(sta|uat|syt)\.dbg\.westfield\.com$" ||
-	req.http.Host ~ "^wwwnz\.(sta|uat|syt)\.dbg\.westfield\.com$" ||
-	req.http.Host ~ "^wwwus\.(sta|uat|syt)\.dbg\.westfield\.com$" ) 
+	req.http.Host ~ "^www(au|nz|us)\.syt1\.dbg\.westfield\.com$" ) 
 {
-	# It sucks to do the regexp twice but I couldn't come-up with a solution that
-	# added a / for "/centre" requests and didn't for "/centre/file.exp".
-	# The latter can't have a slash added; the former must.  Feel free to come-up
-	# with something better.
-	if (req.url ~ "^/(bradford|broadmarsh|castlecourt|derby|eaglecentre|london|londondevelopment|merryhill|royalvictoriaplace|stratfordcity|stratfordcityleasing|thefriary|thevillagelondon|ukcentres)/?$") {
-		set req.url = regsub(req.url, "^/([^/]+)(/*)$", "http://wwwuk.uat.westfield.com/\1/");
+	if (req.url ~ "^/(bradford|broadmarsh|castlecourt|derby|eaglecentre|london|londondevelopment|merryhill|royalvictoriaplace|stratfordcity|thefriary|thevillagelondon|ukcentres|uk)/?$") {
+		set req.url = regsub(req.url, "^/([^/]+)(/*)$", "http://wwwuk.syt1.dbg.westfield.com/\1/");
 		error 751 req.url;
-	} elseif (req.url ~ "^/(bradford|broadmarsh|castlecourt|derby|eaglecentre|london|londondevelopment|merryhill|royalvictoriaplace|stratfordcity|stratfordcityleasing|thefriary|thevillagelondon|ukcentres)/") {
-		set req.url = regsub(req.url, "^/([^/]+)/(.*)$", "http://wwwuk.uat.westfield.com/\1/\2");
+	} elseif (req.url ~ "^/(bradford|broadmarsh|castlecourt|derby|eaglecentre|london|londondevelopment|merryhill|royalvictoriaplace|stratfordcity|thefriary|thevillagelondon|ukcentres|uk)/") {
+		set req.url = regsub(req.url, "^/([^/]+)/(.*)$", "http://wwwuk.syt1.dbg.westfield.com/\1/\2");
 		error 751 req.url;
 	}
 }
 
+# Systest 2
+
+if (
+	req.http.Host ~ "^www(au|nz|us)\.syt2\.dbg\.westfield\.com$" ) 
+{
+	if (req.url ~ "^/(bradford|broadmarsh|castlecourt|derby|eaglecentre|london|londondevelopment|merryhill|royalvictoriaplace|stratfordcity|thefriary|thevillagelondon|ukcentres|uk)/?$") {
+		set req.url = regsub(req.url, "^/([^/]+)(/*)$", "http://wwwuk.syt2.dbg.westfield.com/\1/");
+		error 751 req.url;
+	} elseif (req.url ~ "^/(bradford|broadmarsh|castlecourt|derby|eaglecentre|london|londondevelopment|merryhill|royalvictoriaplace|stratfordcity|thefriary|thevillagelondon|ukcentres|uk)/") {
+		set req.url = regsub(req.url, "^/([^/]+)/(.*)$", "http://wwwuk.syt2.dbg.westfield.com/\1/\2");
+		error 751 req.url;
+	}
+}
+
+# Systest 3
+
+if (
+	req.http.Host ~ "^www(au|nz|us)\.syt3\.dbg\.westfield\.com$" ) 
+{
+	if (req.url ~ "^/(bradford|broadmarsh|castlecourt|derby|eaglecentre|london|londondevelopment|merryhill|royalvictoriaplace|stratfordcity|thefriary|thevillagelondon|ukcentres|uk)/?$") {
+		set req.url = regsub(req.url, "^/([^/]+)(/*)$", "http://wwwuk.syt3.dbg.westfield.com/\1/");
+		error 751 req.url;
+	} elseif (req.url ~ "^/(bradford|broadmarsh|castlecourt|derby|eaglecentre|london|londondevelopment|merryhill|royalvictoriaplace|stratfordcity|thefriary|thevillagelondon|ukcentres|uk)/") {
+		set req.url = regsub(req.url, "^/([^/]+)/(.*)$", "http://wwwuk.syt3.dbg.westfield.com/\1/\2");
+		error 751 req.url;
+	}
+}
+
+# Systest 4
+
+if (
+	req.http.Host ~ "^www(au|nz|us)\.syt4\.dbg\.westfield\.com$" ) 
+{
+	if (req.url ~ "^/(bradford|broadmarsh|castlecourt|derby|eaglecentre|london|londondevelopment|merryhill|royalvictoriaplace|stratfordcity|thefriary|thevillagelondon|ukcentres|uk)/?$") {
+		set req.url = regsub(req.url, "^/([^/]+)(/*)$", "http://wwwuk.syt4.dbg.westfield.com/\1/");
+		error 751 req.url;
+	} elseif (req.url ~ "^/(bradford|broadmarsh|castlecourt|derby|eaglecentre|london|londondevelopment|merryhill|royalvictoriaplace|stratfordcity|thefriary|thevillagelondon|ukcentres|uk)/") {
+		set req.url = regsub(req.url, "^/([^/]+)/(.*)$", "http://wwwuk.syt4.dbg.westfield.com/\1/\2");
+		error 751 req.url;
+	}
+}

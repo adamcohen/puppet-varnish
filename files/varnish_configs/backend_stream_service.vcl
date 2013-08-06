@@ -7,9 +7,9 @@ backend stream_service_localhost {
     .interval = 10 s;
     .window = 5;
     .threshold = 2;
-    .request =
+    .request = 
       "GET /status.json HTTP/1.1"
-      "Host: stream-service.production.dbg.westfield.com"
+      "Host: stream-service.systest.dbg.westfield.com"
       "Connection: close";
   }
 }

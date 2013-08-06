@@ -1,6 +1,6 @@
 (
   req.http.Host == "wwwau.systest.dbg.westfield.com" && 
-  req.url ~ "^/api/movie/?"
+  req.url ~ "^/api/aaa/?"
 )
 
 

@@ -1,4 +1,4 @@
-backend event_service_localhost {
+backend aaa_service_localhost {
   .host = "localhost";
   .port = "8080";
   .max_connections = 16;
@@ -9,12 +9,12 @@ backend event_service_localhost {
     .threshold = 2;
     .request = 
       "GET /status.json HTTP/1.1"
-      "Host: event-service.systest.dbg.westfield.com"
+      "Host: aaa-service.systest.dbg.westfield.com"
       "Connection: close";
   }
 }
 
-director event_service random {
-  { .backend = event_service_localhost; .weight = 1; }
+director aaa_service random {
+  { .backend = aaa_service_localhost; .weight = 1; }
 }
 

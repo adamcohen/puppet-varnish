@@ -7,9 +7,9 @@ backend movie_service_localhost {
     .interval = 10 s;
     .window = 5;
     .threshold = 2;
-    .request =
-      "GET /api/movie/master/movies.json HTTP/1.1"
-      "Host: movie-service.production.dbg.westfield.com"
+    .request = 
+      "GET /status.json HTTP/1.1"
+      "Host: movie-service.systest.dbg.westfield.com"
       "Connection: close";
   }
 }

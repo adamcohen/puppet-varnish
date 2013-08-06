@@ -7,9 +7,9 @@ backend store_service_localhost {
     .interval = 10 s;
     .window = 5;
     .threshold = 2;
-    .request =
-      "GET /api/store/master/stores.json HTTP/1.1"
-      "Host: store-service.production.dbg.westfield.com"
+    .request = 
+      "GET /status.json HTTP/1.1"
+      "Host: store-service.systest.dbg.westfield.com"
       "Connection: close";
   }
 }

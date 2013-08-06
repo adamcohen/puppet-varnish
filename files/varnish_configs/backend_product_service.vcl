@@ -7,9 +7,9 @@ backend product_service_localhost {
     .interval = 10 s;
     .window = 5;
     .threshold = 2;
-    .request =
+    .request = 
       "GET /admin/about HTTP/1.1"
-      "Host: product-service.production.dbg.westfield.com"
+      "Host: product-service.systest.dbg.westfield.com"
       "Connection: close";
   }
 }

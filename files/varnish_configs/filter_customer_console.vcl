@@ -1,4 +1,5 @@
 (
-  req.http.Host ~ "^wwwau.(production|systest|uat|test|development).dbg.westfield.com$" 
-) 
+  req.http.Host == "wwwau.systest.dbg.westfield.com"
+)
+
 
