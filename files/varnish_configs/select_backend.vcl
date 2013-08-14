@@ -79,6 +79,12 @@ elseif include "/etc/varnish/filter_customer_console.vcl"; {
 	set req.http.Host = "customer-console.development.dbg.westfield.com";
 }
 
+elseif include "/etc/varnish/filter_back_office_console.vcl"; {
+	set req.backend = back_office_console;
+	set req.http.X-Forwarded-Host = req.http.Host;
+	set req.http.Host = "back-office-console.development.dbg.westfield.com";
+}
+
 #elseif include "/etc/varnish/filter_aaa_service.vcl"; {
 #        set req.backend = aaa_service;
 #        set req.http.X-Forwarded-Host = req.http.Host;

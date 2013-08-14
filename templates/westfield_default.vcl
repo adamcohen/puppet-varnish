@@ -4,6 +4,8 @@
 # back_office_console (HTTPS)
 # customer_console
 include "/etc/varnish/backend_customer_console.vcl";
+# back_office_console
+include "/etc/varnish/backend_back_office_console.vcl";
 ## centre_service
 include "/etc/varnish/backend_centre_service.vcl";
 # customer_service (HTTPS)
