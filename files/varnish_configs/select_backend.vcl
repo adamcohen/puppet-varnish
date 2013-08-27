@@ -25,12 +25,6 @@ elseif include "/etc/varnish/filter_event_service.vcl"; {
 	set req.http.Host = "event-service.development.dbg.westfield.com";
 }
 
-elseif include "/etc/varnish/filter_user_service.vcl"; {
-       set req.backend = user_service;
-       set req.http.X-Forwarded-Host = req.http.Host;
-       set req.http.Host = "user-service.development.dbg.westfield.com";
-}
-
 elseif include "/etc/varnish/filter_file_service.vcl"; {
 	set req.backend = file_service;
 	set req.http.X-Forwarded-Host = req.http.Host;

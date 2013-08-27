@@ -11,8 +11,6 @@ include "/etc/varnish/backend_centre_service.vcl";
 # customer_service (HTTPS)
 # deal_service
 include "/etc/varnish/backend_deal_service.vcl";
-# user_service
-include "/etc/varnish/backend_user_service.vcl";
 # event_service
 include "/etc/varnish/backend_event_service.vcl";
 # file_service
