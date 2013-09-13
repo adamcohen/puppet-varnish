@@ -3,7 +3,7 @@ backend customer_console_localhost {
   .port = "8080";
   .max_connections = 16;
   .probe = {
-    .timeout = 500 ms;
+    .timeout = 1 s;
     .interval = 10 s;
     .window = 5;
     .threshold = 2;
